@@ -1,0 +1,24 @@
+{
+  "name": "emociforntend",
+  "authors": [
+    "Isa Setiawan Abdurrazaq <azaqokay@gmail.com>"
+  ],
+  "description": "bagian frontend dari dasbor emoci",
+  "main": "index.html",
+  "keywords": [
+    "police"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/iwannabd",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "ng-file-upload": "^12.2.13"
+  }
+}

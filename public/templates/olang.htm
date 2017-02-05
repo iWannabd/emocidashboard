@@ -1,0 +1,69 @@
+<div class="col-md-8">
+    <table class="table table-hover">
+        <thead>
+        <tr>
+            <th>Foto</th>
+            <th>Nama</th>
+            <th>Alamat</th>
+            <th>Usia</th>
+            <th>Jenis Kelamin</th>
+            <th>Contact Person</th>
+            <th>Aksi</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="olang in olangs">
+            <td><img src="storage/{{olang.img}}" height="200px"></td>
+            <td>{{olang.nama}}</td>
+            <td>{{olang.address}}</td>
+            <td>{{olang.usia}}</td>
+            <td>{{olang.sex}}</td>
+            <td>{{olang.kontak}}</td>
+            <td>
+                <a class="btn-sm btn-danger" ng-click="Hapus(olang.id)">Hapus</a>
+                <a class="btn-sm btn-primary" ng-click="validate(olang.id)" ng-show="!olang.validate">Validasi</a>
+                <a class="btn-sm btn-primary" ng-click="validate(olang.id)" ng-show="olang.validate">Batalkan Validasi</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<div class="col-md-4">
+    <div class="form-group">
+        <label for="nama">Nama:</label>
+        <input type="text" ng-model="selected.nama" class="form-control" rows="5" id="nama"></input>
+    </div>
+
+    <div class="form-group">
+        <label for="kasus">Alamat:</label>
+        <input type="text" ng-model="selected.address" class="form-control" id="kasus"></input>
+
+    </div>
+
+    <div class="form-group">
+        <label for="usia">Usia:</label>
+        <input type="text" ng-model="selected.usia" class="form-control" id="usia"></input>
+    </div>
+
+    <div class="form-group">
+        <label for="sex">Jenis Kelamin:</label>
+        <input type="text" ng-model="selected.sex" class="form-control" id="sex"></input>
+    </div>
+
+    <div class="form-group">
+        <label for="call">Kontak:</label>
+        <input type="text" ng-model="selected.kontak" class="form-control" id="call"></input>
+    </div>
+
+    <div class="form-group">
+        <label for="img">Image:</label>
+        <button type="file" id="img" class="btn btn-primary" ngf-select="unggah($file, $invalidFiles)" name="file" ngf-pattern="'image/*'"
+                ngf-accept="'image/*'" ngf-max-size="10MB" ngf-min-height="100">Upload (maks:10Mb)</button>
+
+        <div>{{f.name}} {{errFile.name}} {{errFile.$error}} {{errFile.$errorParam}}
+            <span class="progress" ng-show="f.progress >= 0">
+                <div style="width:{{f.progress}}%" ng-bind="f.progress + '%'"></div>
+            </span>
+        </div>
+    </div>
+</div>
